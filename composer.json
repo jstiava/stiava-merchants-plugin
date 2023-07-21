@@ -1,0 +1,13 @@
+{
+    "name": "stiava/stiava_merchants_app",
+    "description": "Stiava Merchants App",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "StiavaMerchantsApp\\Includes\\": "includes/",
+            "StiavaMerchantsApp\\API\\": "api/",
+            "StiavaMerchantsApp\\Core\\": "core/"
+        }
+    }
+}
