@@ -18,14 +18,16 @@ class Deploy
         // Send information to the React app
         wp_localize_script('react-app-admin', 'reactAdminContext', array(
             'post' => $post,
-            'isMarket' => get_post_meta($post->ID, 'isMarket')
+            'isMarket' => get_post_meta($post->ID, 'isMarket'),
+            'primary' => get_post_meta($post->ID, '_merchant_primary_color')[0],
+            'secondary' => get_post_meta($post->ID, '_merchant_secondary_color')[0],
         ));
 
         // React app
-        $react_app_dir = plugin_dir_url(__FILE__) . '../apps/stiava-react-example/';
+        $react_app_dir = plugin_dir_url(__FILE__) . '../apps/stiava-react-hours-manager/';
         $react_app_build = $react_app_dir . 'build/';
 
-        require_once(__DIR__ . '/../apps/stiava-react-example/build/asset-manifest.php');
+        require_once(__DIR__ . '/../apps/stiava-react-hours-manager/build/asset-manifest.php');
 
         // Convert the resulting array to JSON and decode it as a PHP array
         $files_data = json_decode($asset_manifest_json);

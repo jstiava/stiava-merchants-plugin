@@ -15,6 +15,7 @@ use StiavaMerchantsApp\API\DeleteHours;
 use StiavaMerchantsApp\API\PostNewVenue;
 use StiavaMerchantsApp\API\GetVenues;
 use StiavaMerchantsApp\API\GetMenuItems;
+use StiavaMerchantsApp\API\UpdateColor;
 
 class Endpoints
 {
@@ -34,6 +35,7 @@ class Endpoints
         PostNewVenue::append();
         GetVenues::append();
         GetMenuItems::append();
+        UpdateColor::append();
     }
 }
 

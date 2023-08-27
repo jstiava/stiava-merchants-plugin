@@ -248,37 +248,59 @@ class Schedule
         $start = null;
         $days = $this->days;
         
-
+        // Loop through each day in days.
         for ($current = 0; $current < count($days); $current++) {
 
             if (is_null($days[$current])) {
                 continue;
             }
             
-            $days_string = '';
+            // Collect matching days
             $collected_days = [$current];
             for ($i = $current + 1; $i < count($days); $i++) {
                 if (is_null($days[$i])) {
                     continue;
                 }
                 if ($days[$i] === $days[$current]) {
-                    $collected_days[] = ', ' . $i;
+                    $collected_days[] = $i;
                     $days[$i] = null;
                 }
             }
-
-            for ($i = 0; $i < count($collected_days); $i++) {
+            
+            // Construct days string
+            $strings = [];
+            $last = -1;
+            while (!empty($collected_days)) {
+                $target = array_shift($collected_days);
                 
+                // Base case
+                if (empty($strings)) {
+                    $strings[] = $this->get_day_name($target);
+                }
+                // consecutive
+                else if ($last == $target - 1) {
+                    if (strpos($strings[count($strings) - 1], '-') !== false) {
+                        array_pop($strings);
+                    }
+                    $strings[] = '-' . $this->get_day_name($target);
+                }
+                // non-consec
+                else {
+                    $strings[] = ', ' . $this->get_day_name($target);
+                }
+                
+                $last = $target;
             }
 
+            $days_string = implode('', $strings);
             if ($collected_days === [0, 1, 2, 3, 4]) {
-                $days_string = "Weekdays: ";
+                $days_string = "Weekdays";
             }
             else if ($collected_days === [5, 6]) {
-                $days_string = "Weekends: ";
+                $days_string = "Weekends";
             }
 
-            $sets[] = $days_string . $this->preclean_days_pointer($current);
+            $sets[] = $days_string . ': ' . $this->preclean_days_pointer($current);
         
         }
 

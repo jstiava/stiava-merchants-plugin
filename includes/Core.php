@@ -216,7 +216,7 @@ class Core
         self::jsmp_install();
         add_action('init', [self::class, 'jsmp_custom_post_types']);
         add_action('init', [self::class, 'jsmp_custom_post_metadata']);
-        ColorPicker::run();
+        // ColorPicker::run();
         MerchantIconPicker::run();
         DescriptionMetabox::run();
         CoordinatesMetabox::run();
