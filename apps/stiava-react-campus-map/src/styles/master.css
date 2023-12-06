@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+/* Animation */
+/* Keyframes for the fade animation */
+@keyframes _fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes _rise_and_fade {
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+
+#header-main {
+  animation: _fade 0.5s ease-in-out backwards 0s;
+}
+#header-main > svg {
+  animation: _rise_and_fade 0.5s ease-in-out backwards 0.2s;
+}
+.header-main-right {
+  animation: _rise_and_fade 0.5s ease-in-out backwards 0.4s;
+}
+#header-menu {
+  animation: _fade 0.5s ease-in-out backwards 0.6s;
+}
+
+
+
+/* Core CSS */
+
+.MuiIconButton-root {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+
+header > * {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+
+#header-main {
+  align-items: center;
+  background-color: #a51417;
+  border-top: 8px solid #800d0f;
+  padding: 3rem 6rem;
+}
+
+#header-menu {
+  background-color: #ffffff;
+  padding: 1rem 6rem;
+}
+
+.header-main-right {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+.header-main-right > *:not(:last-child) {
+  margin-right: 16px;
+}
+
+.header-main-menu-left {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.header-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-menu-item .MuiSvgIcon-root {
+  margin-right: 0.25rem;
+}
+
+
+.header-menu-item-parent {
+  display: flex;
+  padding: 8px 16px !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  letter-spacing: normal !important;
+  text-decoration: none;
+  text-transform:capitalize !important;
+}
+
+.header-menu-item-submenu {
+  display: flex;
+  position: absolute;
+  transform: translateY(2.5rem);
+  background-color: grey;
+  width: fit-content;
+  height: fit-content;
+  padding: 16px;
+}
+
+.header-main-menu-left > * {
+  margin-right: 1rem !important;
+}
+
+
+
+/* Map */
+svg {
+  width: 100%;
+  cursor: pointer;
+}
+
+
+.drawer p {
+  font-size: 2rem;
+}

@@ -1,0 +1,30 @@
+[
+	{
+		"ID": "5",
+		"merchant_id": "226",
+		"com_id": null,
+		"name": "Fall Semester Hours",
+		"start": "20231101",
+		"days": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			false,
+			false
+		],
+		"schemes": [
+			{
+				"max": 12,
+				"min": 4,
+				"breaks": [],
+				"asString": "8am-4pm"
+			}
+		],
+		"asString": "Mon-Fri: 8am-4pm; Sat-Sun: Closed",
+		"end": null,
+		"type": "standard",
+		"priority": "1000"
+	}
+]

@@ -7,6 +7,8 @@ use StiavaMerchantsApp\Core\MerchantIconPicker;
 use StiavaMerchantsApp\Core\DescriptionMetabox;
 use StiavaMerchantsApp\Core\CoordinatesMetabox;
 use StiavaMerchantsApp\Core\ComponentsDashboard;
+use StiavaMerchantsApp\Core\ReactHeader;
+use StiavaMerchantsApp\Core\ReactFooter;
 
 /**
  * Installation database reconfigurations
@@ -221,5 +223,7 @@ class Core
         DescriptionMetabox::run();
         CoordinatesMetabox::run();
         ComponentsDashboard::run();
+        ReactHeader::run();
+        ReactFooter::run();
     }
 }

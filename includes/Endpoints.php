@@ -12,6 +12,7 @@ use StiavaMerchantsApp\API\GetClosedDays;
 use StiavaMerchantsApp\API\PostNewClosure;
 use StiavaMerchantsApp\API\UpdateHours;
 use StiavaMerchantsApp\API\DeleteHours;
+use StiavaMerchantsApp\API\DeleteVenueAndHours;
 use StiavaMerchantsApp\API\PostNewVenue;
 use StiavaMerchantsApp\API\GetVenues;
 use StiavaMerchantsApp\API\GetMenuItems;
@@ -34,8 +35,9 @@ class Endpoints
         DeleteHours::append();
         PostNewVenue::append();
         GetVenues::append();
-        GetMenuItems::append();
         UpdateColor::append();
+        GetMenuItems::append();
+        DeleteVenueAndHours::append();
     }
 }
 

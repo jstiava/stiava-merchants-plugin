@@ -11,7 +11,7 @@ class ComponentsDashboard
         if ('post.php' != $hook && 'post-new.php' != $hook) {
             return;
         };
-        Deploy::deploy_example();
+        Deploy::stiava_react_hours_manager();
     }
 
     public static function components_dashboard_picker()
